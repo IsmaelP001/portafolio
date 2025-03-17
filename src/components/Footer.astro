@@ -1,29 +1,39 @@
 ---
-const currentYear = new Date().getFullYear()
+import { navItems } from "./Header.astro";
+import GitHub from "./icons/GitHub.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+
+const currentYear = new Date().getFullYear();
 ---
 
-<footer
-  class="opacity-80 m-4 min-[375px]:pl-4 md:pl-0 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
->
-  <div
-    class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
-  >
-    <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
-      >© {currentYear}
-      <a href="https://midu.dev/" class="hover:underline">midudev</a>. Casi
-      todos los derechos reservados
-    </span>
-    <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
-    >
-      <li>
-        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
-      </li>
-      <li>
-        <a id="contacto" href="mailto:miduga@gmail.com" class="hover:underline"
-          >Contacto</a
+<footer class="bg-gray-900 text-gray-300 py-6 mt-16 pb-10">
+  <div class="container mx-auto flex flex-col items-center gap-4 text-center">
+    <!-- Texto principal -->
+    <p class="text-sm md:text-base">
+      © {currentYear} -  Todos los derechos reservados.
+    </p>
+
+    <!-- Enlaces -->
+    <nav class="flex gap-6">
+      {navItems.map((link) => (
+        <a
+          href={link.url}
+          aria-label={link.label}
+          class="px-3 py-2 text-white dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-500 transition"
         >
-      </li>
-    </ul>
+          {link.title}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Redes sociales -->
+    <div class="flex items-star justify-start gap-4 mt-2">
+      <a href="https://github.com/IsmaelP001" target="_blank" aria-label="GitHub" class="hover:text-white transition">
+       <GitHub/>
+      </a>
+      <a href="https:www.linkedin.com/in/ismael-perezg" target="_blank" aria-label="LinkedIn" class="hover:text-white transition">
+       <LinkedIn class="size-7"/>
+      </a>
+    </div>
   </div>
 </footer>

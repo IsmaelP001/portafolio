@@ -1,93 +1,128 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
+import GitHub from "./icons/GitHub.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import LinkButton from "./LinkButton.astro";
+import TRPC from "./icons/Trpc.astro";
+import REACTQUERY from "./icons/ReactQuery.astro";
+import HEXAGONALARQ from "./icons/HexagonalArquitecture.astro";
+import Redirect from "./icons/Redirect.astro";
+import Drizzle from "./icons/Drizzle.astro";
+import Shadcn from "./icons/Shadcn.astro";
 
 const TAGS = {
   NEXT: {
     name: "Next.js",
-    class: "bg-black text-white",
+    class: "border bg-gray-900 text-white",
     icon: NextJS,
   },
   TAILWIND: {
     name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
+    class: "border bg-blue-600 text-white",
     icon: Tailwind,
   },
-}
+  TRPC: {
+    name: "tRPC",
+    class: "border bg-purple-600 text-white",
+    icon: TRPC,
+  },
+  DRIZZLE: {
+    name: "Drizzle",
+    class: "border border-green-700   text-green-700 dark:text-white",
+    icon: Drizzle,
+  },
+  SHADCN: {
+    name: "Shadcn",
+    class: "border bg-gray-600 text-white",
+    icon: Shadcn,
+  },
+  REACTQUERY: {
+    name: "React Query",
+    class: "border bg-indigo-600 text-white",
+    icon: REACTQUERY,
+  },
+  HEXAGONALARQ: {
+    name: "Arquitectura Hexagonal",
+    class: "bg-red-600 text-white",
+    icon: HEXAGONALARQ,
+  },
+};
+
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Reelevante - Biblioteca Inteligente",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Plataforma digital que revoluciona el acceso a bibliotecas, permitiendo a los usuarios descubrir, reservar y disfrutar de libros de forma interactiva. Cuenta con recomendaciones personalizadas.",
+    link: "https://ui-admin-web.vercel.app/es",
+    github: "https://github.com/IsmaelP001/releevante-platform",
+    image: "/projects/reelevante.png",
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.SHADCN, TAGS.REACTQUERY],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "Cartago - Fundas Personalizadas",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Tienda online de accesorios para móviles donde puedes diseñar tu funda única. Ofrece una experiencia interactiva con diseños exclusivos y garantía de calidad.",
+    link: "https://cases-store.vercel.app",
+    github: "https://gitfront.io/r/ismaelperez/4FDNeNJHPEsi/CasesStore",
+    image: "/projects/cases-store.png",
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.TRPC, TAGS.DRIZZLE],
   },
-]
+  {
+    title: "ProjectManager - Gestión de Proyectos",
+    description:
+      "Aplicación para administrar proyectos en el sector de la construcción, que permite asignar tareas, monitorear el progreso y analizar el rendimiento en tiempo real.",
+    github: "https://gitfront.io/r/ismaelperez/C69vLgJdPz1p/task-managment",
+    link: "https://task-managment-gray-nu.vercel.app",
+    image: "/projects/project-manager.png",
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.TRPC, TAGS.DRIZZLE],
+  },
+];
 ---
-
 <div class="flex flex-col gap-y-16">
-  {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div>
-
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
+  {PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col md:flex-row items-center gap-8 group">
+      <div class="w-full md:w-1/2">
+        <div class="relative overflow-hidden rounded-2xl shadow-lg transform transition duration-500 group-hover:scale-105">
+          <img
+            src={image}
+            alt={`Imagen representativa de ${title}`}
+            class="w-full h-56 object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 space-y-4">
+        <h3 class="text-2xl font-extrabold text-gray-900 dark:text-gray-100">
+          {title}
+        </h3>
+        <ul class="flex flex-wrap gap-2">
           {tags.map((tag) => (
             <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
+              <span class={`flex items-center gap-1 rounded-full text-xs font-medium ${tag.class} py-1 px-2`}>
+                <tag.icon class="w-4 h-4" />
                 {tag.name}
               </span>
             </li>
           ))}
         </ul>
-
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
+        <p class="text-gray-700 dark:text-gray-300">
+          {description}
+        </p>
+        <div class="flex gap-4">
           {github && (
             <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
+              <GitHub class="w-4 h-4" />
+              Ver Código
             </LinkButton>
           )}
           {link && (
             <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
+              <Redirect class="w-4 h-4" />
+              Ver Demo
             </LinkButton>
           )}
-        </footer>
-    </div>
-  </div>
-</article>
-    ))
-  }
+        </div>
+      </div>
+    </article>
+  ))}
 </div>
-
-
-

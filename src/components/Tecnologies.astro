@@ -1,0 +1,122 @@
+---
+import NextJS from './icons/NextJS.astro';
+import Shadcn from './icons/Shadcn.astro';
+import React from './icons/React.astro';
+import ReactQuery from './icons/ReactQuery.astro';
+import Trpc from './icons/Trpc.astro';
+import Tailwind from './icons/Tailwind.astro';
+import Node from './icons/Node.astro';
+import Postgres from './icons/Postgres.astro';
+import Drizzle from './icons/Drizzle.astro';
+import Prisma from './icons/Prisma.astro';
+import Typescript from './icons/Typescript.astro';
+import GitHub from './icons/GitHub.astro';
+import Nest from './icons/Nest.astro';
+import AstroIcon from './icons/AstroIcon.astro';
+
+const tecnologias = [
+  { 
+    Icon: React, 
+    alt: "React", 
+    nombre: "React", 
+    colorClass: "text-blue-400 group-hover:text-blue-600 dark:text-gray-100" 
+  },
+  { 
+    Icon: AstroIcon, 
+    alt: "Astro", 
+    nombre: "Astro", 
+    colorClass: "text-purple-500 group-hover:text-blue-600 dark:text-gray-100" 
+  },
+  { 
+    Icon: NextJS, 
+    alt: "NextJs", 
+    nombre: "NextJs", 
+    colorClass: "text-black group-hover:text-black dark:text-gray-100" 
+  },
+  { 
+    Icon:Tailwind , 
+    alt: "Tailwind", 
+    nombre: "Tailwind", 
+    colorClass: "text-blue-400 group-hover:text-gray-800 dark:text-gray-100" 
+  },
+  { 
+    Icon:Shadcn , 
+    alt: "Shadcn", 
+    nombre: "Shadcn", 
+    colorClass: "text-gray-800 group-hover:text-gray-800 dark:text-gray-100" 
+  },
+
+  { 
+    Icon:Typescript , 
+    alt: "Typescript", 
+    nombre: "Typescript", 
+    colorClass: "text-blue-600 group-hover:text-gray-800 dark:text-gray-100" 
+  },
+  { 
+    Icon:ReactQuery , 
+    alt: "ReactQuery", 
+    nombre: "ReactQuery", 
+    colorClass: "text-red-500 dark:text-gray-100" 
+  },
+  { 
+    Icon: Trpc, 
+    alt: "TRPC", 
+    nombre: "TRPC", 
+    colorClass: "text-blue-600  dark:text-gray-100" 
+  },
+  { 
+    Icon: Drizzle, 
+    alt: "Drizzle ORM", 
+    nombre: "Drizzle ORM", 
+    colorClass: "text-green-600  dark:text-gray-100" 
+  },
+  { 
+    Icon: Prisma, 
+    alt: "Prisma", 
+    nombre: "Prisma", 
+    colorClass: "text-black  dark:text-gray-100" 
+  },
+  { 
+    Icon: Node, 
+    alt: "Node.js", 
+    nombre: "Node.js", 
+    colorClass: "text-green-600  dark:text-gray-100" 
+  },
+  { 
+    Icon: Nest, 
+    alt: "Nest", 
+    nombre: "Nest", 
+    colorClass: "text-red-600  dark:text-gray-100" 
+  },
+  { 
+    Icon: Postgres, 
+    alt: "Postgres", 
+    nombre: "Postgres", 
+    colorClass: "text-blue-400  dark:text-gray-100" 
+  },
+  { 
+    Icon: GitHub, 
+    alt: "GitHub", 
+    nombre: "GitHub", 
+    colorClass: "text-black  dark:text-gray-100" 
+  },
+
+];
+---
+
+<section class="py-12 px-4 max-w-6xl mx-auto">
+  <div class="grid auto-rows-[100px] grid-cols-[repeat(auto-fill,minmax(80px,1fr))] place-items-center items-center justify-center gap-8 md:gap-10">
+    {tecnologias.map((tech) => (
+      <div class="group cursor-pointer transition-all duration-300 ease-in-out">
+        <div class="flex flex-col items-center">
+          <tech.Icon
+            class="w-16 h-16 transition-transform duration-300 ease-in-out group-hover:scale-110" 
+          />
+          <p class={`mt-2 text-base font-medium text-center transition-all duration-300 ease-in-out group-hover:text-lg group-hover:font-bold ${tech.colorClass}`}>
+            {tech.nombre}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

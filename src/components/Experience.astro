@@ -2,29 +2,27 @@
 import ExperienceItem from "./ExperienceItem.astro"
 const EXPERIENCE = [
   {
-    date: "Actualmente...",
-    title: "Creador de Contenido",
-    company: "Twitch",
-    description:
-      "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
-    link: "https://twitch.tv/midudev",
+    date: "2024",
+    title: "Freelancer",
+    company: "",
+    description:"Como freelance full stack, lideré proyectos integrales combinando interfaces intuitivas y soluciones robustas en el servidor. Adapté estrategias a las necesidades del cliente, logrando entregas eficientes y de alta calidad que impulsaron el crecimiento de sus negocios.",
+        link: "https://twitch.tv/midudev",
   },
   {
-    date: "Septiembre 2022",
-    title: "Principal Frontend Engineer",
-    company: "Adevinta Spain",
-    description:
-      "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
-  },
+    date: "Mediados de 2024 - 2025",
+    title: "Programador full stack",
+    company: "",
+    description:"En una pequeña startup, durante 6 meses, formé parte de un equipo ágil para desarrollar proyectos completos. Mi rol abarcó la creación de interfaces modernas y soluciones del servidor, optimizando la arquitectura del sistema y elevando la eficiencia operativa."  },
 ]
 ---
 
 <ol class="relative mt-16">
-  {
-    EXPERIENCE.map((experience) => (
-      <li class="">
-        <ExperienceItem {...experience} />
-      </li>
-    ))
-  }
+  <div class="absolute top-0 left-[90svw] md:left-[60%] transform md:-translate-x-1/2 h-[85%] w-[2px] bg-gray-300"></div>
+
+  {EXPERIENCE.map((experience) => (
+    <li>
+      <ExperienceItem {...experience} />
+    </li>
+  ))}
 </ol>
+

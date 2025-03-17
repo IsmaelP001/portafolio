@@ -1,48 +1,48 @@
 ---
-const personalImageAlt = "Miguel Ángel"
 import Badge from "@/components/Badge.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 import MailIcon from "@/components/icons/Mail.astro"
 import SocialPill from "@/components/SocialPill.astro"
 ---
 
-<div class="max-w-xl">
-  <div class="flex gap-4 mb-4">
-    <img
-      class="rounded-full shadow-lg size-16"
-      src="/midudev.webp"
-      alt={personalImageAlt}
-    />
-    <a
-      href="https://linkedin.com/in/midudev"
-      target="_blank"
-      rel="noopener"
-      class="flex items-center transition md:justify-center md:hover:scale-105"
-    >
-      <Badge>Disponible para trabajar</Badge>
-    </a>
-  </div>
-  <h1
+<div class="flex flex-col-reverse md:flex-row justify-between md:gap-10 items-center">  
+  <div>
+    <h1
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
-    Hey, soy midudev
+    Hi, soy Ismael Perez
   </h1>
-  <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
-  >
-    +15 años de experiencia. <strong
-      >Ingeniero de Software y Creador de Contenido sobre Programación</strong
-    > de Barcelona, España 🇪🇸. Especializado en el desarrollo de aplicaciones web
-    únicas.
+  <p class="mt-6 text-xl text-gray-800 dark:text-gray-300">
+    Con un año de experiencia como freelancer y en mi propia empresa, transformo ideas en experiencias digitales únicas. 
+    <strong>Desarrollador Full Stack</strong> comprometido con la innovación, orgullosamente radicado en la República Dominicana.
   </p>
-  <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:miduga@gmail.com">
+  <nav class="flex justify-center md:justify-start  flex-wrap gap-4 mt-8">
+    <SocialPill href="mailto:ismaelp.dev@gmail.com">
       <MailIcon class="size-4" />
       Contáctame
     </SocialPill>
-    <SocialPill href="https://linkedin.com/in/midudev">
+    <SocialPill href="https:www.linkedin.com/in/ismael-perezg">
       <LinkedInIcon class="size-4" />
       LinkedIn
     </SocialPill>
   </nav>
+  </div>
+  <div class="relative flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg w-[100px] border  md:w-[650px] h-auto"
+      src="/avatar-1.png"
+      alt="Ismael Perez"
+    />
+    <a
+      href="https:www.linkedin.com/in/ismael-perezg"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <!-- <Badge>Disponible para trabajar</Badge> -->
+    </a>
+    <!-- <span
+    class="fixed inset-[-2000%] z-[-1] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFFFFF_0%,#FFF7A8_50%,#FFFFFF_100%)] dark:!bg-black"
+  ></span> -->
+  </div>
 </div>
