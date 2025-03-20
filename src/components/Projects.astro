@@ -62,7 +62,7 @@ const PROJECTS = [
     title: "Cartago - Fundas Personalizadas",
     description:
       "Tienda online de accesorios para móviles donde puedes diseñar tu funda única. Ofrece una experiencia interactiva con diseños exclusivos y garantía de calidad.",
-    link: "https://cases-store.vercel.app",
+    link: process.env.CASE_STORE_DOMAIN!,
     github: "https://github.com/IsmaelP001/CasesStore",
     image: "/projects/cases-store.png",
     tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.TRPC, TAGS.DRIZZLE],
