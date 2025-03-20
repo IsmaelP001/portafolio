@@ -2,7 +2,6 @@
 import GitHub from "./icons/GitHub.astro";
 import NextJS from "./icons/NextJS.astro";
 import Tailwind from "./icons/Tailwind.astro";
-import LinkButton from "./LinkButton.astro";
 import TRPC from "./icons/Trpc.astro";
 import REACTQUERY from "./icons/ReactQuery.astro";
 import HEXAGONALARQ from "./icons/HexagonalArquitecture.astro";
@@ -13,32 +12,32 @@ import Shadcn from "./icons/Shadcn.astro";
 const TAGS = {
   NEXT: {
     name: "Next.js",
-    class: "border bg-gray-900 text-white",
+    class: "bg-gray-900 text-white",
     icon: NextJS,
   },
   TAILWIND: {
     name: "Tailwind CSS",
-    class: "border bg-blue-600 text-white",
+    class: "bg-blue-600 text-white",
     icon: Tailwind,
   },
   TRPC: {
     name: "tRPC",
-    class: "border bg-purple-600 text-white",
+    class: "bg-purple-600 text-white",
     icon: TRPC,
   },
   DRIZZLE: {
     name: "Drizzle",
-    class: "border border-green-700   text-green-700 dark:text-white",
+    class: "bg-green-700 text-white",
     icon: Drizzle,
   },
   SHADCN: {
     name: "Shadcn",
-    class: "border bg-gray-600 text-white",
+    class: "bg-gray-600 text-white",
     icon: Shadcn,
   },
   REACTQUERY: {
     name: "React Query",
-    class: "border bg-indigo-600 text-white",
+    class: "bg-indigo-600 text-white",
     icon: REACTQUERY,
   },
   HEXAGONALARQ: {
@@ -78,51 +77,69 @@ const PROJECTS = [
   },
 ];
 ---
-<div class="flex flex-col gap-y-16">
-  {PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col md:flex-row items-center gap-8 group">
-      <div class="w-full md:w-1/2">
-        <div class="relative overflow-hidden rounded-2xl shadow-lg transform transition duration-500 group-hover:scale-105">
+
+<section class=`py-12  w-full ${Astro.props.className} `>
+
+
+  <div class=`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  ${Astro.props.className}`>
+    {PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 h-full flex flex-col">
+        <div class="relative">
           <img
             src={image}
-            alt={`Imagen representativa de ${title}`}
-            class="w-full h-56 object-cover"
+            alt={`Imagen de ${title}`}
+            class="w-full h-52 object-cover"
             loading="lazy"
           />
-        </div>
-      </div>
-      <div class="w-full md:w-1/2 space-y-4">
-        <h3 class="text-2xl font-extrabold text-gray-900 dark:text-gray-100">
-          {title}
-        </h3>
-        <ul class="flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <li>
-              <span class={`flex items-center gap-1 rounded-full text-xs font-medium ${tag.class} py-1 px-2`}>
-                <tag.icon class="w-4 h-4" />
+          <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-40"></div>
+          <div class="absolute bottom-0 left-0 w-full p-4 flex flex-wrap gap-2">
+            {tags.slice(0, 2).map((tag) => (
+              <span class={`flex items-center gap-1 rounded-full text-xs py-1 px-2 ${tag.class}`}>
+                <tag.icon class="w-3 h-3" />
                 {tag.name}
               </span>
-            </li>
-          ))}
-        </ul>
-        <p class="text-gray-700 dark:text-gray-300">
-          {description}
-        </p>
-        <div class="flex gap-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="w-4 h-4" />
-              Ver Código
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Redirect class="w-4 h-4" />
-              Ver Demo
-            </LinkButton>
-          )}
+            ))}
+            {tags.length > 2 && (
+              <span class="rounded-full bg-gray-700 text-white text-xs py-1 px-2 flex items-center">
+                +{tags.length - 2}
+              </span>
+            )}
+          </div>
+        </div>
+        
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">
+            {title}
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm mb-6 flex-1">
+            {description}
+          </p>
+          
+          <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700 flex justify-between">
+            {github && (
+              <a href={github} class="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-sm font-medium transition-colors duration-200">
+                <GitHub class="w-5 h-5" />
+                Código
+              </a>
+            )}
+            {link && (
+              <a href={link} class="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-sm font-medium transition-colors duration-200 ml-auto">
+                <Redirect class="w-5 h-5" />
+                Demo
+              </a>
+            )}
+          </div>
+        </div>
+        
+        <div class="overflow-hidden">
+          <div class="flex flex-wrap gap-1 p-3 bg-gray-50 dark:bg-gray-900">
+            {tags.map((tag) => (
+              <span class="text-xs font-medium text-gray-600 dark:text-gray-400">#{tag.name.replace(/\s+/g, '')}</span>
+            ))}
+          </div>
         </div>
       </div>
-    </article>
-  ))}
-</div>
+    ))}
+  </div>
+  
+</section>

@@ -7,14 +7,12 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer class="bg-gray-900 text-gray-300 py-6 mt-16 pb-10">
-  <div class="container mx-auto flex flex-col items-center gap-4 text-center">
-    <!-- Texto principal -->
+  <div class="container mx-auto flex flex-col items-center text-center gap-4 px-4">
     <p class="text-sm md:text-base">
-      © {currentYear} -  Todos los derechos reservados.
+      © {currentYear} - Todos los derechos reservados.
     </p>
 
-    <!-- Enlaces -->
-    <nav class="flex gap-6">
+    <nav class="flex flex-col sm:flex-row gap-3 sm:gap-6">
       {navItems.map((link) => (
         <a
           href={link.url}
@@ -26,13 +24,12 @@ const currentYear = new Date().getFullYear();
       ))}
     </nav>
 
-    <!-- Redes sociales -->
-    <div class="flex items-star justify-start gap-4 mt-2">
+    <div class="flex gap-4 mt-2">
       <a href="https://github.com/IsmaelP001" target="_blank" aria-label="GitHub" class="hover:text-white transition">
-       <GitHub/>
+        <GitHub class="size-6 sm:size-7"/>
       </a>
       <a href="https:www.linkedin.com/in/ismael-perezg" target="_blank" aria-label="LinkedIn" class="hover:text-white transition">
-       <LinkedIn class="size-7"/>
+        <LinkedIn class="size-6 sm:size-7"/>
       </a>
     </div>
   </div>
