@@ -13,13 +13,13 @@ importers:
         version: 0.5.6(typescript@5.3.3)
       '@astrojs/tailwind':
         specifier: 5.1.0
-        version: 5.1.0(astro@4.4.5(typescript@5.3.3))(tailwindcss@3.4.1)
+        version: 5.1.0(astro@4.4.5(@types/node@22.13.10)(typescript@5.3.3))(tailwindcss@3.4.1)
       '@fontsource-variable/onest':
         specifier: 5.0.2
         version: 5.0.2
       astro:
         specifier: 4.4.5
-        version: 4.4.5(typescript@5.3.3)
+        version: 4.4.5(@types/node@22.13.10)(typescript@5.3.3)
       astro-robots-txt:
         specifier: 1.0.0
         version: 1.0.0
@@ -32,6 +32,10 @@ importers:
       typescript:
         specifier: 5.3.3
         version: 5.3.3
+    devDependencies:
+      '@types/node':
+        specifier: ^22.13.10
+        version: 22.13.10
 
 packages:
 
@@ -635,6 +639,9 @@ packages:
 
   '@types/nlcst@1.0.4':
     resolution: {integrity: sha512-ABoYdNQ/kBSsLvZAekMhIPMQ3YUZvavStpKYs7BjLLuKVmIMA0LUgZ7b54zzuWJRbHF80v1cNf4r90Vd6eMQDg==}
+
+  '@types/node@22.13.10':
+    resolution: {integrity: sha512-I6LPUvlRH+O6VRUqYOcMudhaIdUVWfsjnZavnsraHvpBwaEyMN29ry+0UVJhImYL16xsscu0aske3yA+uPOWfw==}
 
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
@@ -2044,6 +2051,9 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
+
   unherit@3.0.1:
     resolution: {integrity: sha512-akOOQ/Yln8a2sgcLj4U0Jmx0R5jpIg2IUyRrWOzmEbjBtGzBdHtSeFKgoEcoH4KYIG/Pb8GQ/BwtYm0GCq1Sqg==}
 
@@ -2403,9 +2413,9 @@ snapshots:
     dependencies:
       prismjs: 1.30.0
 
-  '@astrojs/tailwind@5.1.0(astro@4.4.5(typescript@5.3.3))(tailwindcss@3.4.1)':
+  '@astrojs/tailwind@5.1.0(astro@4.4.5(@types/node@22.13.10)(typescript@5.3.3))(tailwindcss@3.4.1)':
     dependencies:
-      astro: 4.4.5(typescript@5.3.3)
+      astro: 4.4.5(@types/node@22.13.10)(typescript@5.3.3)
       autoprefixer: 10.4.21(postcss@8.5.3)
       postcss: 8.5.3
       postcss-load-config: 4.0.2(postcss@8.5.3)
@@ -2853,6 +2863,10 @@ snapshots:
     dependencies:
       '@types/unist': 2.0.11
 
+  '@types/node@22.13.10':
+    dependencies:
+      undici-types: 6.20.0
+
   '@types/unist@2.0.11': {}
 
   '@types/unist@3.0.3': {}
@@ -2956,7 +2970,7 @@ snapshots:
       valid-filename: 4.0.0
       zod: 3.24.2
 
-  astro@4.4.5(typescript@5.3.3):
+  astro@4.4.5(@types/node@22.13.10)(typescript@5.3.3):
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/internal-helpers': 0.2.1
@@ -3017,8 +3031,8 @@ snapshots:
       tsconfck: 3.1.5(typescript@5.3.3)
       unist-util-visit: 5.0.0
       vfile: 6.0.3
-      vite: 5.4.14
-      vitefu: 0.2.5(vite@5.4.14)
+      vite: 5.4.14(@types/node@22.13.10)
+      vitefu: 0.2.5(vite@5.4.14(@types/node@22.13.10))
       which-pm: 2.2.0
       yargs-parser: 21.1.1
       zod: 3.24.2
@@ -4663,6 +4677,8 @@ snapshots:
 
   typescript@5.3.3: {}
 
+  undici-types@6.20.0: {}
+
   unherit@3.0.1: {}
 
   unified@10.1.2:
@@ -4775,17 +4791,18 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@5.4.14:
+  vite@5.4.14(@types/node@22.13.10):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.5.3
       rollup: 4.35.0
     optionalDependencies:
+      '@types/node': 22.13.10
       fsevents: 2.3.3
 
-  vitefu@0.2.5(vite@5.4.14):
+  vitefu@0.2.5(vite@5.4.14(@types/node@22.13.10)):
     optionalDependencies:
-      vite: 5.4.14
+      vite: 5.4.14(@types/node@22.13.10)
 
   volar-service-css@0.0.62(@volar/language-service@2.4.12):
     dependencies:
